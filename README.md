@@ -68,6 +68,25 @@ start the server!
 $ npm start #or yarn start
 ```
 
+### Environment variables
+
+Set these in `.env` (local) or your host (Vercel/Render/etc.):
+
+```
+PORT=3000
+TMDB_KEY=d4bf0c2165ca7cec01d61b632f81290d
+NODE_ENV=PROD
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_PASSWORD=SamXerz1973!
+PROXY=[]
+GOGOANIME_URL=https://anitaku.io
+# ZORO_URL=
+# MULTIMOVIES_URL=
+# BILIBILI_COOKIE=
+# RECAPTCHATOKEN=
+```
+
 ### Docker
 Docker image is available at [Docker Hub](https://hub.docker.com/r/riimuru/consumet-api).
 
@@ -93,6 +112,21 @@ Host your own instance of Consumet API on Heroku using the button below.
 Host your own instance of Consumet API on Vercel using the button below.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fconsumet%2Fapi.consumet.org)
+
+Quick steps (CLI):
+1. `npm install -g vercel` and `vercel login`.
+2. From repo root: `vercel link` (or run `vercel` and follow prompts).
+3. Add env vars:  
+   `vercel env add PORT` → `3000`  
+   `vercel env add TMDB_KEY` → your key  
+   `vercel env add NODE_ENV` → `PROD`  
+   `vercel env add REDIS_HOST` → your Redis host  
+   `vercel env add REDIS_PORT` → `6379`  
+   `vercel env add REDIS_PASSWORD` → your password  
+   `vercel env add PROXY` → `[]`  
+   `vercel env add GOGOANIME_URL` → `https://anitaku.io`
+4. Deploy: `vercel --prod`.
+5. Base URL will be `https://<your-vercel-domain>`.
 
 ### Render
 Host your own instance of Consumet API on Render using the button below.

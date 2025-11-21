@@ -10,6 +10,8 @@ import movieshd from './movieshd';
 import sflix from './sflix';
 import multimovies from './multimovies';
 import himovies from './himovies';
+import kissasian from './kissasian';
+import moviehdwatch from './moviehdwatch';
 
 const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
   await fastify.register(flixhq, { prefix: '/flixhq' });
@@ -21,6 +23,8 @@ const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
   await fastify.register(sflix, { prefix: '/sflix' });
   await fastify.register(multimovies, { prefix: '/multimovies' });
   await fastify.register(himovies, { prefix: '/himovies' });
+  await fastify.register(kissasian, { prefix: '/kissasian' });
+  await fastify.register(moviehdwatch, { prefix: '/moviehdwatch' });
 
   fastify.get('/', async (request: any, reply: any) => {
     reply.status(200).send('Welcome to Consumet Movies and TV Shows');
